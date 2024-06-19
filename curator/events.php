@@ -15,7 +15,7 @@
             <div class="upper_header">
                 <p>Service "Куратор"</p>
                 <div class="menu">
-                    <a href="profile.php"><?= $_SESSION["user"] ?></a>
+                    <a href="profile.php"><?=$_COOKIE["user"]["dblogin"]?></a>
                     <a href="./vendor/logout.php">Выход</a>
                 </div>
             </div>
@@ -31,34 +31,35 @@
         </div>
     </header>
 
-    <main class="section groups">
+    <section class="section group">
         <div class="wrap">
             <div class="section__inner">
-                <div class="section__header">
-                    <h1 class="section__header-title title--medium">Мoи гpyппы</h1>
-                    <a class="section__link" href="./addGroup.php">Добавить новую гpуппy</a>
+                <h1 class="section__title title--big">События</h1>
+                <div class="section__panel panel">
+                    <a class="" href="./addEvents.php">Добавить событие</a>
                 </div>
-            </div>
-            <table class="groups_table">
+                <table class="groups_table">
                 <th>
                     <tr class="groups_table-header">
-                        <td>Название группы</td>
-                        <td>Дата создания</td>
+                        <td>Название</td>
+                        <td>Дата события</td>
+                        <td>Статус</td>
                         <td>Редактировать</td>
                         <td>Просмотр</td>
                         <td>Удалить</td>
                     </tr>
                 </th>
                 <tr class="groups_table-cell">
-                    <td>И-16-2</td>
+                    <td>Соревнование по вёрстке сайтов</td>
                     <td>13.12.2016</td>
+                    <td>Закрыт</td>
                     <td>
-                        <a href="./editGroup.php">
+                        <a href="./editEvents.php">
                             <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">
                         </a>
                     </td>
                     <td>
-                        <a href="./viewGroup.php">
+                        <a href="./viewEvents.php">
                             <img class="view" src="./static/svgs/visibility_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
                         </a>
                     </td>
@@ -69,15 +70,16 @@
                     </td>
                 </tr>
                 <tr class="groups_table-cell">
-                    <td>И-16-1</td>
+                    <td>Что-то произошло</td>
                     <td>12.01.2016</td>
+                    <td>Открыт</td>
                     <td>
-                        <a href="./editGroup.php">
+                        <a href="./editEvents.php">
                             <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">
                         </a>
                     </td>
                     <td>
-                        <a href="./viewGroup.php">
+                        <a href="./viewEvents.php">
                             <img class="view" src="./static/svgs/visibility_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
                         </a>
                     </td>
@@ -97,8 +99,9 @@
                     <li class="pagination__item"><a class="pagination__link" href="#"> Следующaя </a></li>
                 </ul>
             </div>
+            </div>
         </div>
-    </main>
+    </section>
 </body>
 
 </html>

@@ -31,35 +31,35 @@
         </div>
     </header>
 
-    <main class="section groups">
+    <section class="section group">
         <div class="wrap">
             <div class="section__inner">
-                <div class="section__header">
-                    <h1 class="section__header-title title--medium">Мoи гpyппы</h1>
-                    <a class="section__link" href="./addGroup.php">Добавить новую гpуппy</a>
+                <h1 class="section__title title--big">Гpyппa И-16-1</h1>
+                <div class="section__panel panel">
+                    <a class="" href="addStudentToGroup.php">Добавить Студента</a>
                 </div>
-            </div>
-            <table class="groups_table">
+                <table class="groups_table">
                 <th>
                     <tr class="groups_table-header">
-                        <td>Название группы</td>
-                        <td>Дата создания</td>
+                        <td>ФИО</td>
+                        <td>Дата зачисления</td>
+                        <td>Контакты</td>
                         <td>Редактировать</td>
-                        <td>Просмотр</td>
                         <td>Удалить</td>
                     </tr>
                 </th>
                 <tr class="groups_table-cell">
-                    <td>И-16-2</td>
-                    <td>13.12.2016</td>
-                    <td>
-                        <a href="./editGroup.php">
-                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">
-                        </a>
+                    <td>Константинопольский Константин <br> Викторович</td>
+                    <td>12 gекабря 2008</td>
+                    <td class="">
+                        <div class="table__contacts">
+                            <a class="table__link" href="tel:88084567898">8 (800) 456-78-98 </a> 
+                            <a class="table__link" href="mailto:kost@mail.ru">kost@mail.ru</a> 
+                        </div>
                     </td>
                     <td>
-                        <a href="./viewGroup.php">
-                            <img class="view" src="./static/svgs/visibility_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
+                        <a href="./editStudent.php">
+                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
                         </a>
                     </td>
                     <td>
@@ -69,16 +69,17 @@
                     </td>
                 </tr>
                 <tr class="groups_table-cell">
-                    <td>И-16-1</td>
-                    <td>12.01.2016</td>
-                    <td>
-                        <a href="./editGroup.php">
-                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">
-                        </a>
+                    <td>Константинопольский Константин <br> Викторович</td>
+                    <td>12 gекабря 2008</td>
+                    <td class="">
+                        <div class="table__contacts">
+                            <a class="table__link" href="tel:88084567898">8 (800) 456-78-98 </a> 
+                            <a class="table__link" href="mailto:kost@mail.ru">kost@mail.ru</a> 
+                        </div>
                     </td>
                     <td>
-                        <a href="./viewGroup.php">
-                            <img class="view" src="./static/svgs/visibility_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
+                        <a href="./editStudent.php">
+                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
                         </a>
                     </td>
                     <td>
@@ -88,17 +89,9 @@
                     </td>
                 </tr>
             </table>
-            <div class="pagination_block">
-                <ul class="pagination section__pagination">
-                    <li class="pagination__item"><a class="pagination__link" href="#"> Предыдушая </a></li>
-                    <li class="pagination__item"><a class="pagination__link" href="#">1</a></li>
-                    <li class="pagination__item"><a class="pagination__link" href="#">2</a></li>
-                    <li class="pagination__item"><a class="pagination__link" href="#">3</a></li>
-                    <li class="pagination__item"><a class="pagination__link" href="#"> Следующaя </a></li>
-                </ul>
             </div>
         </div>
-    </main>
+    </section>
 </body>
 
 </html>

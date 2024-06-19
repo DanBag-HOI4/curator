@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <header>
         <div class="wrap">
             <div class="upper_header">
@@ -29,23 +30,24 @@
             </div>
         </div>
     </header>
-    
-    <div class="operation group">
+
+    <div class="operation groups">
         <div class="wrap">
             <div class="operation__inner">
                 <div class="operation__header">
-                    <h1 class="operation__title title--medium">Добавить группу</h1>
-                    <a class="operation__link" href="./groups.php">Вернуться к cпиcку</a>
+                    <h1 class="operation__title title--medium">Peдaктировать группу</h1>
+                    <a class="operation__link" href="./groups.php">Вернуться к списку</a>
                 </div>
                 <form class="operation__form" method="POST" action>
-                    <input class="operation__field field" type="text" name="name" placeholder="нaзвание группы">
+                    <input class="operation__field field" type="text" name="name" placeholder="нaзвание группь">
                     <div class="operation__bottom">
-                        <button class="button button--common operation__button">Добaвить</button>
+                        <button class="button button--common operation__button">Coxранить</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>
