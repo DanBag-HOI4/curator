@@ -42,7 +42,7 @@ if (!isset($_SESSION)) {
                     <h1 class="operation__title title--medium">Добавить группу</h1>
                     <a class="operation__link" href="./groups.php">Вернуться к cпиcку</a>
                 </div>
-                <form class="operation__form" method="POST" action="./vendor/back_addGroup.php">
+                <form class="operation__form" method="POST" action="./vendor/back_addGroups.php">
                     <input class="operation__field field" type="text" name="group" placeholder="нaзвание группы">
                     <div class="operation__bottom">
                         <button class="button button--common operation__button">Добaвить</button>

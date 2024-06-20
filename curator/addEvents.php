@@ -2,6 +2,7 @@
 if (!isset($_SESSION)) { 
     session_start(); 
 }
+require_once "./vendor/connect.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,20 +45,24 @@ if (!isset($_SESSION)) {
                 </div>
                 <div class="operation__body">
                     <form class="operation__form" method="POST" action="./vendor/back_addEvents.php">
-                        <input class="operation__field field" type="text" name="eventname" placeholder="Название события">
+                        <input class="operation__field field" type="text" name="eventname" placeholder="Название события" required>
                         <div class="operation__line">
                             <div class="select box operation__select">
-                                <select class="operation__select field" name="groups" id="groups-select" required>
-                                    <option value="groups">Выберите группу</option>
-                                    <option value="groups">И-24-1</option>
-                                    <option value="groups">И-24-2</option>
+                            <select class="operation__select field" name="group" id="groups-select" multiple required>
+                                    <?
+                                    foreach($groups as $item) {
+                                        ?>
+                                        <option value="<?=$item[1]?>"><?=$item[1]?></option>
+                                        <?
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <div class="select box operation__select">
                                 <select class="operation__select field" name="status" id="status-select" required>
                                     <option value="status">Статус события</option>
-                                    <option value="status">Открыт</option>
-                                    <option value="status">Закрыт</option>
+                                    <option value="Открыт">Открыт</option>
+                                    <option value="Закрыт">Закрыт</option>
                                 </select>
                             </div>
                         </div>
@@ -68,7 +73,7 @@ if (!isset($_SESSION)) {
                         </div> -->
                         <div class="operation__line">
                             <div class="operation__load-file">
-                                <label class="operation__load-file-text" for="file-img">Зarpузить фото
+                                <label class="operation__load-file-text" for="file-img">Зaгpузить фото
                                     <!-- <svg class="icon icon-photo operation__svg">
                                         <use xlink:href="#photo" />
                                     </svg> -->

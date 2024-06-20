@@ -859,3 +859,7 @@ svg {
 	color: #203347;
 	background-color: #fbfbfb;
 } */
+
+.hidden__input {
+	display: none;
+}

@@ -39,7 +39,7 @@ if (!isset($_SESSION)) {
         <div class="wrap">
             <div class="operation__profile__inner">
                 <div class="operation__header">
-                    <h1 class="operation__title title--medium">Peдактировать профиль</h1><a class="operation__link" href="./events.php">Beрнуться к профилю</a>
+                    <h1 class="operation__title title--medium">Peдактировать профиль</h1><a class="operation__link" href="./profile.php">Beрнуться к профилю</a>
                 </div>
                 <div class="operation__profile">
                     <form class="operation__form" method="POST" action="./vendor/back_editProfile.php" enctype="multipart/form-data">

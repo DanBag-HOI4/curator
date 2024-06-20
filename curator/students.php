@@ -1,3 +1,9 @@
+<?
+if (!isset($_SESSION)) { 
+    session_start(); 
+}
+require_once "./vendor/connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +21,7 @@
             <div class="upper_header">
                 <p>Service "Куратор"</p>
                 <div class="menu">
-                    <a href="profile.php"><?= $_SESSION["user"] ?></a>
+                    <a href="profile.php"><?= $_SESSION["user"]["dblogin"] ?></a>
                     <a href="./vendor/logout.php">Выход</a>
                 </div>
             </div>
@@ -48,13 +54,16 @@
                         <td>Удалить</td>
                     </tr>
                 </th>
-                <tr class="groups_table-cell">
-                    <td>Константинопольский Константин <br> Викторович</td>
-                    <td>12 gекабря 2008</td>
+                <? 
+                foreach($students as $item) {
+                    ?>
+                    <tr class="groups_table-cell">
+                    <td><?=$item[1]?></td>
+                    <td><?=$item[4]?></td>
                     <td class="">
                         <div class="table__contacts">
-                            <a class="table__link" href="tel:88084567898">8 (800) 456-78-98 </a> 
-                            <a class="table__link" href="mailto:kost@mail.ru">kost@mail.ru</a> 
+                            <a class="table__link" href="tel:88084567898">Телефон:<?=$item[3]?></a> 
+                            <a class="table__link" href="mailto:kost@mail.ru">Почта:<?=$item[2]?></a> 
                         </div>
                     </td>
                     <td>
@@ -68,26 +77,9 @@
                         </a>
                     </td>
                 </tr>
-                <tr class="groups_table-cell">
-                    <td>Константинопольский Константин <br> Викторович</td>
-                    <td>12 gекабря 2008</td>
-                    <td class="">
-                        <div class="table__contacts">
-                            <a class="table__link" href="tel:88084567898">8 (800) 456-78-98 </a> 
-                            <a class="table__link" href="mailto:kost@mail.ru">kost@mail.ru</a> 
-                        </div>
-                    </td>
-                    <td>
-                        <a href="./editStudent.php">
-                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
-                        </a>
-                    </td>
-                    <td>
-                        <a href="">
-                            <img class="delete" src="./static/svgs/delete_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
-                        </a>
-                    </td>
-                </tr>
+                    <?
+                }
+                ?>
             </table>
             <div class="pagination_block">
                 <ul class="pagination section__pagination">

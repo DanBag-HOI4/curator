@@ -1,4 +1,5 @@
 <?
+require_once "./vendor/connect.php";
 if (!isset($_SESSION)) { 
     session_start(); 
 }
@@ -42,7 +43,7 @@ if (!isset($_SESSION)) {
                     <h1 class="operation__title title--medium">Добавить студента</h1>
                     <a class="operation__link" href="./groups.php">Вернуться к cпиcку студентов</a>
                 </div>
-                <form class="operation__form" method="POST" action>
+                <form class="operation__form" method="POST" action="./vendor/back_addStudents.php">
                     <div class="operation__block">
                         <div class="operation__line">
                             <input class="operation__field field" type="text" name="fullname" placeholder="ФИО" required>
@@ -50,10 +51,15 @@ if (!isset($_SESSION)) {
                         </div>
                         <div class="operation__line">
                             <div class="select box operation__select">
-                                <select class="operation__select field" name="groups" id="groups-select" required>
-                                    <option value="groups">Выберите группу</option>
-                                    <option value="groups">И-24-1</option>
-                                    <option value="groups">И-24-2</option>
+                                <select class="operation__select field" name="group" id="groups-select" required>
+                                    <option value="group">Выберите группу</option>
+                                    <?
+                                    foreach($groups as $item) {
+                                        ?>
+                                        <option value="<?=$item[0]?>"><?=$item[1]?></option>
+                                        <?
+                                    }
+                                    ?>
                                 </select>
                             </div>
                             <input class="operation__field field" type="email" name="email" placeholder="E-mail" required>
@@ -62,7 +68,7 @@ if (!isset($_SESSION)) {
 
                     <div class="operation__block">
                         <div class="operation__line">
-                            <input class="operation__field field" type="date" name="date" placeholder="Дата зачисления" required>
+                            <input class="operation__field field" type="date" name="date" placeholder="Дата рождения" required>
                         </div>
                     </div>
                     

@@ -1,3 +1,8 @@
+<?
+if (!isset($_SESSION)) { 
+    session_start(); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +44,7 @@
                     <a class="operation__link" href="./groups.php">Вернуться к списку</a>
                 </div>
                 <form class="operation__form" method="POST" action>
-                    <input class="operation__field field" type="text" name="name" placeholder="нaзвание группь">
+                    <input class="operation__field field" type="text" name="name" placeholder="нaзвание группы">
                     <div class="operation__bottom">
                         <button class="button button--common operation__button">Coxранить</button>
                     </div>
