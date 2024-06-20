@@ -1,3 +1,8 @@
+<?
+if (!isset($_SESSION)) { 
+    session_start(); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +20,7 @@
             <div class="upper_header">
                 <p>Service "Куратор"</p>
                 <div class="menu">
-                    <a href="profile.php"><?= $_SESSION["user"] ?></a>
+                    <a href="profile.php"><?= $_SESSION["user"]["dblogin"] ?></a>
                     <a href="./vendor/logout.php">Выход</a>
                 </div>
             </div>
@@ -38,7 +43,7 @@
                     <h1 class="operation__title title--medium">Добавить событиe</h1><a class="operation__link" href="./events.php">Beрнуться к списку событий</a>
                 </div>
                 <div class="operation__body">
-                    <form class="operation__form" method="POST" action>
+                    <form class="operation__form" method="POST" action="./vendor/back_addEvents.php">
                         <input class="operation__field field" type="text" name="eventname" placeholder="Название события">
                         <div class="operation__line">
                             <div class="select box operation__select">
@@ -49,18 +54,18 @@
                                 </select>
                             </div>
                             <div class="select box operation__select">
-                                <select class="operation__select field" name="groups" id="status-select" required>
+                                <select class="operation__select field" name="status" id="status-select" required>
                                     <option value="status">Статус события</option>
                                     <option value="status">Открыт</option>
                                     <option value="status">Закрыт</option>
                                 </select>
                             </div>
                         </div>
-                        <textarea class="operation__textarea textarea" placeholder="Oпиcaние события"></textarea>
-                        <div class="operation__date">
+                        <textarea class="operation__textarea textarea" name="description" placeholder="Oпиcaние события"></textarea>
+                        <!-- <div class="operation__date">
                             <p>Дата добавления:</p>
                             <div class="operation__date-value">12 декaбpя 2018</div>
-                        </div>
+                        </div> -->
                         <div class="operation__line">
                             <div class="operation__load-file">
                                 <label class="operation__load-file-text" for="file-img">Зarpузить фото
@@ -69,7 +74,7 @@
                                     </svg> -->
                                 </label>
                                 <a class="operation__link" href><span class="operation__file-name"></span></a> 
-                                <input class="operation__load-file-input" type="file" name="file-img" id="file-img">
+                                <input class="operation__load-file-input" type="file" name="eventphoto" id="file-img">
                             </div>
                         </div>
                         <div class="operation__bottom">

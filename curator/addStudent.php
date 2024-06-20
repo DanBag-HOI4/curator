@@ -1,3 +1,8 @@
+<?
+if (!isset($_SESSION)) { 
+    session_start(); 
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +19,7 @@
             <div class="upper_header">
                 <p>Service "Куратор"</p>
                 <div class="menu">
-                    <a href="profile.php"><?= $_SESSION["user"] ?></a>
+                    <a href="profile.php"><?= $_SESSION["user"]["dblogin"] ?></a>
                     <a href="./vendor/logout.php">Выход</a>
                 </div>
             </div>

@@ -1,3 +1,10 @@
+<?
+if (!isset($_SESSION)) { 
+    session_start(); 
+}
+
+require_once "./vendor/connect.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +22,7 @@
             <div class="upper_header">
                 <p>Service "Куратор"</p>
                 <div class="menu">
-                    <a href="profile.php"><?= $_SESSION["user"] ?></a>
+                    <a href="profile.php"><?= $_SESSION["user"]["dblogin"] ?></a>
                     <a href="./vendor/logout.php">Выход</a>
                 </div>
             </div>
@@ -49,44 +56,34 @@
                         <td>Удалить</td>
                     </tr>
                 </th>
+                <?
+                foreach ($groups as $item) {
+                ?>
                 <tr class="groups_table-cell">
-                    <td>И-16-2</td>
-                    <td>13.12.2016</td>
+                    <td><?=$item[1]?></td>
+                    <td><?=$item[2]?></td>
                     <td>
                         <a href="./editGroup.php">
-                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">
+                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit"
+                                width="24" height="24">
                         </a>
                     </td>
                     <td>
                         <a href="./viewGroup.php">
-                            <img class="view" src="./static/svgs/visibility_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
+                            <img class="view" src="./static/svgs/visibility_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                                alt="edit" width="24" height="24">
                         </a>
                     </td>
                     <td>
                         <a href="">
-                            <img class="delete" src="./static/svgs/delete_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
+                            <img class="delete" src="./static/svgs/delete_24dp_FILL0_wght400_GRAD0_opsz24.svg"
+                                alt="edit" width="24" height="24">
                         </a>
                     </td>
                 </tr>
-                <tr class="groups_table-cell">
-                    <td>И-16-1</td>
-                    <td>12.01.2016</td>
-                    <td>
-                        <a href="./editGroup.php">
-                            <img class="edit" src="./static/svgs/edit_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="./viewGroup.php">
-                            <img class="view" src="./static/svgs/visibility_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
-                        </a>
-                    </td>
-                    <td>
-                        <a href="">
-                            <img class="delete" src="./static/svgs/delete_24dp_FILL0_wght400_GRAD0_opsz24.svg" alt="edit" width="24" height="24">                        
-                        </a>
-                    </td>
-                </tr>
+                <?
+                }
+                ?>
             </table>
             <div class="pagination_block">
                 <ul class="pagination section__pagination">
